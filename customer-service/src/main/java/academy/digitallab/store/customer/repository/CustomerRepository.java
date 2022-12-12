@@ -11,4 +11,5 @@ public interface CustomerRepository  extends JpaRepository<Customer,Long> {
         public Customer findByNumberID(String numberID);
         public List<Customer> findByLastName(String lastName);
         public List<Customer> findByRegion(Region region);
+        private List<Customer> findByBlood(Blood blood);
 }

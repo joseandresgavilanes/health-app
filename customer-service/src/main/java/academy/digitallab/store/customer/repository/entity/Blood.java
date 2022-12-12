@@ -86,7 +86,7 @@ public class Blood {
         this.fatLevel = fatLevel;
     }
 
-    public float getOxyBlood() {
+    public float getOxygenLevel() {
         return oxygenLevel;
     }
 
@@ -111,7 +111,7 @@ public class Blood {
             status = "Moderate risk of disease";
         }
         if ((sugarLevel < 50 && fatLevel < 62.2 && oxygenLevel > 70)) {
-            status = "low risk of disease";
+            status = "Low risk of disease";
         }
         return status;
     }

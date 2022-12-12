@@ -41,14 +41,13 @@ public class Customer implements Serializable {
     private String photoUrl;
 
 
-    @NotNull(message = "La regióm no puede ser vacia")
+    @NotNull(message = "La región no puede ser vacia")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private Region region;
 
     @NotNull(message = "El campo no puede estar vacío")
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "blood_id")
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private Blood blood;

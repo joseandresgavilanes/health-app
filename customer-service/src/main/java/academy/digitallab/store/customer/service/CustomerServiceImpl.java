@@ -26,6 +26,11 @@ public class CustomerServiceImpl  implements CustomerService {
     }
 
     @Override
+    public List<Customer> findCustomersByBlood(Blood blood) {
+        return customerRepository.findByBlood(blood);
+    }
+
+    @Override
     public Customer createCustomer(Customer customer) {
 
         Customer customerDB = customerRepository.findByNumberID ( customer.getNumberID () );

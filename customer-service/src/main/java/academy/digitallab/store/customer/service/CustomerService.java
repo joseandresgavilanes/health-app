@@ -9,6 +9,8 @@ public interface CustomerService {
 
     public List<Customer> findCustomerAll();
     public List<Customer> findCustomersByRegion(Region region);
+    public List<Customer> findCustomersByBlood(Blood blood);
+
 
     public Customer createCustomer(Customer customer);
     public Customer updateCustomer(Customer customer);

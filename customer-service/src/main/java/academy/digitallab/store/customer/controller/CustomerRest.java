@@ -39,9 +39,9 @@ public class CustomerRest {
                 return ResponseEntity.noContent().build();
             }
         }else{
-            Region Region= new Region();
-            Region.setId(regionId);
-            customers = customerService.findCustomersByRegion(Region);
+            Region region= new region();
+            region.setId(regionId);
+            customers = customerService.findCustomersByRegion(region);
             if ( null == customers ) {
                 log.error("Customers with Region id {} not found.", regionId);
                 return  ResponseEntity.notFound().build();
@@ -50,6 +50,7 @@ public class CustomerRest {
 
         return  ResponseEntity.ok(customers);
     }
+
 
     // -------------------Retrieve Single Customer------------------------------------------
 
