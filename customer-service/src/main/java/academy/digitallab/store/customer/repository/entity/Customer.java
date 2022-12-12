@@ -21,7 +21,7 @@ public class Customer implements Serializable {
 
     @NotEmpty(message = "El número de cédula no puede ser vacío")
     @Size( min = 10 , max = 10, message = "Des ingresar los 10 dígitos de tu cédula")
-    @Column(name = "number_id" , unique = true ,length = 8, nullable = false)
+    @Column(name = "number_id" , unique = true ,length = 10, nullable = false)
     private String numberID;
 
     @NotEmpty(message = "El nombre no puede estar vacío")
@@ -46,6 +46,12 @@ public class Customer implements Serializable {
     @JoinColumn(name = "region_id")
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private Region region;
+
+    @NotNull(message = "El campo no puede estar vacío")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "blood_id")
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+    private Blood blood;
 
     private String state;
 }
